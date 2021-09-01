@@ -112,5 +112,29 @@ static List<Integer> leftSmaller(int n, int a[])
     }
 
 
+    //Implement stack using array 
+    //https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1#
+
+
+    void push(int a)
+	{
+	    // Your code here
+	    if(top>=1000){
+            return;
+        }else{
+            arr[++top] = a;
+        }
+	} 
+	
+    //Function to remove an item from top of the stack.
+	int pop()
+	{
+        // Your code here
+        if(top == -1){
+            return -1;
+        }else{
+            return arr[top--];
+        }
+	}
     
 }
