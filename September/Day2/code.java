@@ -162,3 +162,48 @@ class Solution{
     public boolean empty() {
         return q.isEmpty();
     }
+
+
+    //6.implement-queue-using-stacks
+    //https://leetcode.com/problems/implement-queue-using-stacks/
+   
+   
+    Stack<Integer>op=new Stack();
+    Stack<Integer>ip=new Stack();
+
+    public void push(int x) {
+        ip.push(x);
+    }
+    
+    /** Removes the element from in front of queue and returns that element. */
+    public int pop() {
+     if(op.empty()){
+         while(ip.empty()==false){
+             op.push(ip.peek());
+             ip.pop();
+         }
+     }   
+        int x=op.peek();
+        op.pop();
+        return x;
+    }
+    
+    /** Get the front element. */
+    public int peek() {
+           if(op.empty()){
+         while(ip.empty()==false){
+             op.push(ip.peek());
+             ip.pop();
+         }
+     }   
+        return op.peek();
+        
+    }
+    
+    /** Returns whether the queue is empty. */
+    public boolean empty() {
+        return op.empty() && ip.empty();
+    }
+
+
+}
