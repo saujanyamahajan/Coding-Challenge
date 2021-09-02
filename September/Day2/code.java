@@ -266,7 +266,7 @@ class Solution{
 
   ///7.maxSlidingWindow
   //https://leetcode.com/problems/sliding-window-maximum/
-  
+
   public int[] maxSlidingWindow(int[] a, int k) {
        
         
@@ -292,5 +292,44 @@ class Solution{
            }
        return r;
       
+       }
+
+       //8.the-celebrity-problem
+       //https://practice.geeksforgeeks.org/problems/the-celebrity-problem/1#
+
+
+       int celebrity(int a[][], int n)
+       {
+           // code here 
+           Stack <Integer>st=new Stack<>();
+           for(int i=0;i<a.length;i++)
+           {
+               st.push(i);
+           }
+           while(st.size()>=2){
+               int i=st.pop();
+               int j=st.pop();
+               
+               if(a[i][j]==1)
+               
+               {
+                   st.push(j);
+               }
+               else{
+                   st.push(i);
+               }
+           }
+           int potential_cele=st.pop();
+           for(int i=0;i<a.length;i++)
+           {
+               if(i!=potential_cele)
+               {
+                   if(a[i][potential_cele]==0 || a[potential_cele][i]==1)
+                   {
+                    return -1 ;
+                   }
+                }   
+           }
+           return potential_cele;
        }
 }
