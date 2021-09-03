@@ -119,6 +119,34 @@ class Solution {
     }
 
 
+    //key pair
+    //
+    boolean hasArrayTwoCandidates(int num[], int n, int x) {
+        // code here
+
+        Map<Integer,Integer> map=new HashMap<>();
+        
+        for(int i=0;i<n;i++)
+        {
+            map.put(num[i],i);
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(map.containsKey(x-num[i]))
+            {         
+                map.remove(num[i],i);
+                
+                if(map.containsKey(x-num[i]))
+                {
+                   // res[0]=map.get(x-num[i]);
+                    return true;
+                }
+            }
+        }
+        return false ;
+    }
+
+    
 }
     
 
