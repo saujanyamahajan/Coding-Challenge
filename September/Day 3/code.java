@@ -120,7 +120,8 @@ class Solution {
 
 
     //key pair
-    //
+    //https://practice.geeksforgeeks.org/problems/key-pair5616/1#
+    
     boolean hasArrayTwoCandidates(int num[], int n, int x) {
         // code here
 
@@ -146,7 +147,7 @@ class Solution {
         return false ;
     }
 
-    
+
 }
     
 
