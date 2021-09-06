@@ -55,4 +55,29 @@ class BinaryTree
         dfs(root,ans);
         return ans;
     }
+
+
+    //3.Postorder Traversal 
+    //https://practice.geeksforgeeks.org/problems/postorder-traversal/1
+
+
+    static void dfs(Node node,ArrayList<Integer>ans)
+    {
+        if(node==null)
+        {
+            return;
+        }
+        dfs(node.left,ans);
+        dfs(node.right,ans);
+        ans.add(node.data);
+        
+    }
+    //Function to return a list containing the postorder traversal of the tree.
+    ArrayList<Integer> postOrder(Node root)
+    {
+       // Your code goes here
+       ArrayList<Integer> ans=new ArrayList<>();
+       dfs(root,ans);
+       return ans;
+    }
 }
