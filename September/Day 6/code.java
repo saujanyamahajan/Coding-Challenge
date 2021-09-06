@@ -114,5 +114,38 @@ class BinaryTree
         }
         return ans;
     }
-}
+
+
+    //5.Longest consecutive subsequence 
+    //https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1#
+
+
+    static int findLongestConseqSubseq(int arr[], int n)
+	{
+    HashSet<Integer> ans=new HashSet<>();
+    for(int i:arr)
+    {
+        ans.add(i);
+    }
+    
+    int maxi=0;
+    for(int i:arr)
+    {
+        if(!ans.contains(i-1))
+        {
+             int currentnum=i;
+             int currentmax=1;
+         
+             while(ans.contains(currentnum+1))
+             {
+                 currentnum+=1;
+                 currentmax+=1;
+             }
+             maxi=Math.max(maxi,currentmax);
+        }
+    }
+   return maxi; 
+ }
+
+
 }
