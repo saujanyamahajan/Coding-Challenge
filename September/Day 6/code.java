@@ -34,5 +34,25 @@ class BinaryTree
 
 
 
+    //2.Inorder Traversal 
+    //https://practice.geeksforgeeks.org/problems/inorder-traversal/1
 
+
+    static void dfs(Node node,ArrayList<Integer> ans)
+    {
+        if(node==null){
+            return;
+        }
+    dfs(node.left,ans);
+    ans.add(node.data);
+    dfs(node.right,ans);
+    }
+    // Function to return a list containing the inorder traversal of the tree.
+    ArrayList<Integer> inOrder(Node root) {
+        // Code
+        ArrayList<Integer> ans=new ArrayList<>();
+        
+        dfs(root,ans);
+        return ans;
+    }
 }
