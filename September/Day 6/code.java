@@ -80,4 +80,39 @@ class BinaryTree
        dfs(root,ans);
        return ans;
     }
+
+
+    //4.Level order traversal 
+    //https://practice.geeksforgeeks.org/problems/level-order-traversal/1#
+
+
+    static ArrayList <Integer> levelOrder(Node node) 
+    {
+        // Your code here
+        ArrayList<Integer> ans=new ArrayList<>();
+        Queue<Node> queue=new LinkedList<>();
+        
+        
+        queue.add(node);
+        
+        while(!queue.isEmpty()){
+           
+            Node x=queue.peek();
+                if(x.left!=null)
+                {
+                    queue.add(x.left);
+                }
+                if(x.right!=null)
+                {
+                    queue.add(x.right);
+                    
+                }
+                
+            ans.add(x.data);
+            queue.poll();
+            
+        }
+        return ans;
+    }
+}
 }
