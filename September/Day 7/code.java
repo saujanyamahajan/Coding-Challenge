@@ -194,4 +194,31 @@ int height(Node node)
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
+
+    //7.Diameter of Binary Tree 
+    //https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1#
+
+
+    int diameter(Node root) {
+        // Your code here
+        int[] maxi = new int[1];
+        height(root, maxi);
+        return maxi[0];        
+    }
+    
+    int height(Node node, int[] maxi) {
+        
+        if(node==null)
+        {
+            return 0;
+        }
+        int lh=height(node.left,maxi);
+        int rh=height(node.right,maxi);
+        
+        maxi[0]=Math.max(maxi[0],lh+rh+1);
+        
+        return Math.max(lh,rh)+1;
+    }
+    
+    
 }
