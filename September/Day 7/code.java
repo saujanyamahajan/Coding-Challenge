@@ -137,4 +137,21 @@ class Solution {
   
     return postOrder; 
 }
+
+//5.Height of Binary Tree 
+//https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1#
+
+
+int height(Node node) 
+    {
+        // code here 
+        if(node==null){
+            return 0;
+        }
+        int lh=height(node.left);
+        int rh=height(node.right);
+        
+        return 1 + Math.max(rh,lh);
+    }
+
 }
