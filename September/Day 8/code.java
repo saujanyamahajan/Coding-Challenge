@@ -171,4 +171,19 @@ public class code {
                 maxValue[0] = Math.max(maxValue[0], left + right + node.val);
                 return Math.max(left, right) + node.val;
             }
+
+
+            //4. Determine if Two Trees are Identical
+            //https://practice.geeksforgeeks.org/problems/determine-if-two-trees-are-identical/1#
+            
+
+            boolean isIdentical(Node root1, Node root2)
+            {
+                // Code Here
+                if(root1==null || root2 == null)
+                {
+                    return (root1==root2); 
+                } 
+                return (root1.data== root2.data) && isIdentical(root1.left, root2.left) && isIdentical(root1.right, root2.right); 
+            }
 }
