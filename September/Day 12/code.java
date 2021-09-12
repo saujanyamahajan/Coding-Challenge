@@ -4,7 +4,7 @@
 ///https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/submissions/
 
 
-
+//tree node
 class Tuple{
     TreeNode node;
     int row;
@@ -60,4 +60,47 @@ class Solution {
         }
         return ans;
     }
+
+
+    //2.Check if Linked List is Palindrome 
+    //https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1#
+
+
+    Node reverseList(Node head){
+        Node pre=null;
+        Node next=null;
+        while(head!=null){
+            next=head.next;
+            head.next=pre;
+            pre=head;
+            head=next;
+        }
+        return pre;
+    }
+    boolean isPalindrome(Node head) 
+    {
+        //Your code here
+        if(head==null||head.next==null){
+            return true;
+        }
+        Node slow=head;
+        Node fast=head;
+        
+        while(fast.next!=null && fast.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        
+        slow.next=reverseList(slow.next);
+        slow=slow.next;
+        
+        while(slow!=null){
+            if(head.data!=slow.data){
+                return false;
+            }
+            head=head.next;
+            slow=slow.next;
+        }
+        return true;
+    }    
 }
