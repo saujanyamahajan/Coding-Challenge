@@ -38,5 +38,33 @@ public class code
                 k--;
             }
         }
+
+
+        //2.rotate an array
+        //https://leetcode.com/problems/rotate-array/
+
+
+    } public void reverse(int[] arr, int i,int j)
+    {
+       while(j>i)
+        {
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            
+            i++;
+            j--;
+        }
     }
+
+    
+    public void rotate(int[] arr, int k) 
+    {
+       k=k%arr.length;
+        reverse(arr,0,arr.length-1);
+        reverse(arr,0,k-1);
+        reverse(arr,k,arr.length-1);
+    }
+
+
 }
