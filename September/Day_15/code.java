@@ -48,5 +48,30 @@ import java.util.*;
         }
         return 1;
     }
+
+
+    //Equilibrium Point 
+    //https://practice.geeksforgeeks.org/problems/equilibrium-point-1587115620/1/?track=md-arrays&batchId=144#
+
+
+    public static int equilibriumPoint(long arr[], int n) {
+
+        // Your code here
+        int sum=0;
+        int leftsum=0;
+        
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+        }
+        for(int i=0;i<n;i++){
+            sum-=arr[i];
+            
+            if(leftsum==sum){
+                return i+1;
+            }
+            leftsum+=arr[i];
+        }
+        return -1;
+    }
     }  
 
