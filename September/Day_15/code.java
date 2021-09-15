@@ -101,5 +101,32 @@ import java.util.*;
         }    
         
     }
+
+    //Majority Element 
+    //https://practice.geeksforgeeks.org/problems/majority-element-1587115620/1/?track=md-arrays&batchId=144#
+
+    static int majorityElement(int a[], int size)
+    {
+        // your code here
+        int maxEle=0;
+        for(int i=0;i<size;i++)
+        {
+            maxEle=Math.max(maxEle,a[i]);   
+        }
+        int freq[]=new int[maxEle+1];
+        for(int i=0;i<size;i++)
+        {
+            freq[a[i]]++;
+        }
+        for(int i=1;i<freq.length;i++)
+        {
+            if(freq[i]>size/2)
+            {
+                return i;
+            }    
+        }
+        
+        return -1;
+    }
     }  
 
