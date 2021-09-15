@@ -73,5 +73,33 @@ import java.util.*;
         }
         return -1;
     }
+
+
+    //Rearrange Array Alternately 
+    //https://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1/?track=md-arrays&batchId=144
+
+    public static void rearrange(int arr[], int n){
+        
+        // Your code here
+        int temp[]= arr.clone();
+        int left=0;
+        int right=n-1;
+        boolean flag=true;
+        for(int i=0;i<n;i++)
+        {
+             if (flag)
+             {
+                arr[i] = temp[right];
+                right--;
+             }    
+            else
+            {
+                arr[i] = temp[left];
+                left++;
+            }
+            flag = !flag;
+        }    
+        
+    }
     }  
 
