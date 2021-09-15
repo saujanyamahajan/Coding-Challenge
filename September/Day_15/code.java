@@ -23,5 +23,30 @@ import java.util.*;
          }
          return ans;
         }
+
+
+//JUMP GAME
+//https://practice.geeksforgeeks.org/problems/jump-game/1/?track=md-arrays&batchId=144#
+
+     static int canReach(int[] A, int N) 
+    {
+        // code here
+        int reachable=0;
+        
+        for(int i=0;i<N;i++)
+        {
+             if(i>reachable)
+             {
+                 return 0;
+             }
+             else
+             {
+               reachable= Math.max(reachable,i+A[i]); 
+               
+               
+             }
+        }
+        return 1;
+    }
     }  
 
