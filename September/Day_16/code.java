@@ -57,5 +57,28 @@ public class code {
              return ans;
              
         } 
+
+
+        //11. Frequencies of Limited Range Array Elements 
+        //https://practice.geeksforgeeks.org/problems/frequency-of-array-elements-1587115620/1/?track=md-arrays&batchId=144
+
+
+        public static void frequencyCount(int arr[], int N, int P)
+        {
+            // code here
+            int maxi = Math.max(P,N);
+            int[] ans = new int[maxi+1];
+    
+            for(int i=0; i<N; i++)
+            {
+                ans[arr[i]]++;
+            }
+    
+            for(int i=0; i<N; i++)
+            {
+                arr[i] = ans[i+1];
+            }
+        }
+    }
     }
 
