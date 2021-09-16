@@ -27,5 +27,35 @@ public class code {
            Collections.reverse(ans);
             return ans;
         }
+
+
+        //Product array puzzle 
+        //https://practice.geeksforgeeks.org/problems/product-array-puzzle4525/1/?track=md-arrays&batchId=144
+
+        public static long[] productExceptSelf(int nums[], int n) 
+        { 
+            // code here
+            long[] ans =new long[n];
+            long product=1;
+            if(n<1)
+            {
+                return ans;   
+            }
+            for(int i=0;i<n;++i)
+            {
+                product*=nums[i];
+                ans[i]=product;
+            }
+             
+             product=1;
+             for(int i=n-1;i>0;--i)
+             {
+                 ans[i]=ans[i-1]*product;
+                 product*=nums[i];
+             }
+             ans[0]=product;
+             return ans;
+             
+        } 
     }
 
