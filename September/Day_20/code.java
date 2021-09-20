@@ -137,6 +137,60 @@ public class code {
         }
         return 1;
     }
+
+
+    //9. Alternate positive and negative numbers 
+    //https://practice.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1/?track=md-arrays&batchId=144
+
+
+    void rearrange(int arr[], int n) {
+        // code here
+        
+            ArrayList<Integer> pos = new ArrayList<>();
+            ArrayList<Integer> neg = new ArrayList<>();
+
+            for(int i = 0; i < n; i++)
+            {
+                if(arr[i] >= 0)
+                {
+                    pos.add(arr[i]);
+                }
+
+                else
+                {
+                    neg.add(arr[i]);
+                }
+            }
+
+            int[] ans = new int[n];
+
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while(i < pos.size() && j < neg.size())
+            {
+                ans[k++] = pos.get(i++);
+                ans[k] = neg.get(j);
+                j++;
+                k++;
+            }
+
+            while(i < pos.size())
+            {
+                ans[k++] = pos.get(i++);
+            }
+
+            while(j < neg.size())
+            {
+                ans[k++] = neg.get(j++);
+            }
+
+            for(int x = 0; x < n; x++)
+            {
+                arr[x] = ans[x];
+            }
+    }
     }
     
     
