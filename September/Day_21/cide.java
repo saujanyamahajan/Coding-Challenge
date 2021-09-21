@@ -159,5 +159,24 @@ public class cide {
        return res;
     }
 
+
+    //1. Wave Array
+    //https://practice.geeksforgeeks.org/problems/wave-array-1587115621/1/?track=md-sorting&batchId=144
+
+    
+    public static void swap(int arr[], int a, int b)
+    {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+    
+    public static void convertToWave(int arr[], int n){
+        
+        // Your code here
+        for (int i=0; i<n-1; i += 2)
+            swap(arr, i, i+1);
+    }
+    
 }
 
