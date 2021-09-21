@@ -127,5 +127,37 @@ public class cide {
     }
 
 
+
+    //7. Square root of a number 
+    //https://practice.geeksforgeeks.org/problems/square-root/1/?track=md-searching&batchId=144#
+
+
+    long floorSqrt(long x)
+    {
+       // Your code here
+       long l =0;
+       long h = x;
+       
+       long res =0;
+       while(l<=h)
+       {
+           long mid = l + (h-l)/2;
+           
+           if(mid*mid==x)
+           return mid;
+           
+           if(mid*mid<x)
+           {
+              l = mid+1;
+              res = mid;
+           }
+           else
+           {
+               h = mid-1;
+           }
+       }
+       return res;
+    }
+
 }
 
