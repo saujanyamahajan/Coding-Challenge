@@ -105,7 +105,27 @@ public class cide {
     }
 
 
-    
+    //2. Search insert position of K in a sorted array 
+    //https://practice.geeksforgeeks.org/problems/search-insert-position-of-k-in-a-sorted-array/0/?track=md-searching&batchId=144
+
+    static int searchInsertK(int arr[], int n, int k)
+    {
+      
+        // code here
+        for(int i=0;i<n;i++)
+        {
+        if (arr[i]==k)
+        {
+            return i;
+        }
+        else if (arr[i]>k)
+        {
+            return i;
+        }
+    }
+    return n;
+    }
+
 
 }
 
