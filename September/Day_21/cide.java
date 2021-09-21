@@ -74,4 +74,34 @@ public class cide {
         }
                 return ans;
     }
+
+
+    //1. Binary Search 
+    //https://practice.geeksforgeeks.org/problems/binary-search-1587115620/1/?track=md-searching&batchId=144#
+
+    int binarysearch(int arr[], int n, int k){
+        // code here
+         int l = 0, r = arr.length - 1;
+         
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+  
+            if (arr[m] == k)
+            {
+                return m;
+            }
+            if (arr[m] < k)
+            {
+                l = m + 1;
+            }
+            else
+            {
+                r = m - 1;
+            }    
+        }
+  
+      
+        return -1;
+    }
 }
+
