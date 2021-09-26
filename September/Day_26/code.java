@@ -117,4 +117,38 @@ for (int i = 3; i <= n; i++)
 return str;
 
 }
+
+//14. Longest Distinct characters in string 
+//https://practice.geeksforgeeks.org/problems/longest-distinct-characters-in-string5848/0/?track=md-string&batchId=144
+
+
+static int longestSubstrDistinctChars(String str){
+    // code here
+    String test = "";
+    int maxLength = -1;
+
+    if (str.isEmpty()) 
+    {
+        return 0;
+    }
+   
+    else if (str.length()==1)
+    {
+        return 1;
+    }
+    
+    for (char c:str.toCharArray()) {
+        String current=String.valueOf(c);
+        
+        if (test.contains(current))
+        {
+            test=test.substring(test.indexOf(current)+1);
+        }
+        test=test + String.valueOf(c);
+        maxLength=Math.max(test.length(),maxLength);
+    }
+
+    return maxLength;
+
+}
 }
