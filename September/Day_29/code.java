@@ -16,5 +16,22 @@ class Solution
     }
 
 
+    //The If Statement 
+    //https://practice.geeksforgeeks.org/problems/the-if-statement/1
+
+
+    public static void utility(int number){
+        //Write your if statement below
+        if(number<100)
+        {
+        //Write your if statement above
+        System.out.println("Number");
+        }
+        else
+        {
+        System.out.println("Big");
+        System.out.println("Number");
+        }
+    }
 
 }
