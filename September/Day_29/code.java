@@ -35,7 +35,7 @@ class Solution
     }
 
 
-    //While Loop While Loop 
+    //While Loop 
     //https://practice.geeksforgeeks.org/problems/while-loop/1
 
 
@@ -48,6 +48,22 @@ class Solution
             x--;
         }
         
+     }
+
+
+     //Sum of Array Elements 
+     //https://practice.geeksforgeeks.org/problems/sum-of-array-elements2502/1
+
+
+     public static int sumElement(int arr[], int n)
+     {
+         // Your code here
+         int sum=0;
+         for(int i=0;i<n;i++)
+         {
+             sum=sum+arr[i];
+         }
+         return sum;
      }
      
 }
