@@ -34,4 +34,20 @@ class Solution
         }
     }
 
+
+    //While Loop While Loop 
+    //https://practice.geeksforgeeks.org/problems/while-loop/1
+
+
+    public static void utility(int x){
+   
+        //Write your code here
+        while(x>=0)
+        {
+            System.out.print(x+" ");
+            x--;
+        }
+        
+     }
+     
 }
