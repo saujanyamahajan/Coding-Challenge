@@ -52,4 +52,22 @@ public class code {
 
         return  s;
 	}
+
+
+    //Factorial
+    //https://practice.geeksforgeeks.org/problems/factorial5739/1#
+
+
+    static long factorial(int N){
+        // code here
+        long ans;
+        if(N==1)
+        {
+            return 1; 
+        }
+        long fact=factorial(N-1);
+        //ans=N*fact;
+        ans=Long.valueOf(N*fact);
+        return ans;
+    }
 }
