@@ -75,5 +75,27 @@ public class code
             return  s;
         }
         
+
+        //779. K-th Symbol in Grammar
+        //https://leetcode.com/problems/k-th-symbol-in-grammar/
+
+        public int kthGrammar(int n, int k) {
+            if(n == 1 && k == 1) return 0;
+    
+            int len=(int)Math.pow(2,n-2);
+            
+            //int mid=len/2;
+            if(k<=len)
+            {
+                 return kthGrammar(n-1,k);
+            
+            }
+            else
+            {
+                return kthGrammar(n-1,k-len)^1;
+                
+                
+            }
+        }
  }
     
