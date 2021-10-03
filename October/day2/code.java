@@ -1,4 +1,4 @@
-package October.day1;
+package October.day2;
 
 import java.util.*;
 public class code
