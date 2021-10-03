@@ -55,6 +55,60 @@ public class code {
             
             return res;
         }
+
+
+        //Help the Old Man!!! 
+        //https://practice.geeksforgeeks.org/problems/help-the-old-man3848/1#
+
+
+        public static void solve(List<Integer> ans,int source,int helper,int destination,int disk,int n,int[] move)
+        {
+            if(disk == 0)
+            {
+                return;
+            }
+            solve(ans,source,destination,helper,disk-1,n,move);
+            move[0]++;
+            if(move[0]==n)
+            {
+                ans.add(source);
+                ans.add(destination);
+            }
+            solve(ans,helper,source,destination,disk-1,n,move);
+        }
+        
+        static List<Integer> shiftPile(int N, int n)
+        {
+            // code here
+            List<Integer> ans=new ArrayList<>();
+            int[] move=new int[]{0};
+            solve(ans,1,2,3,N,n,move);
+            return ans;
+        }
+
+
+        //Subsets
+        //https://leetcode.com/problems/subsets/
+
+
+        public List<List<Integer>> subsets(int[] nums) {
+            Arrays.sort(nums);
+            List<List<Integer>> res = new ArrayList<>();
+            solve(nums, 0, new ArrayList<>(), res);
+            return res;
+        }
+        
+        private void solve(int[] nums, int idx, List<Integer> path, List<List<Integer>> res) 
+            {
+                res.add(path);
+                for (int i = idx; i < nums.length; i++) 
+                {
+                    List<Integer> p = new ArrayList<>(path);
+                    p.add(nums[i]);
+                    solve(nums, i+1, p, res);
+                }
+            }
+
     }
     
 
