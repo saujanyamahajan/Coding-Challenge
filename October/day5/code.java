@@ -1,5 +1,5 @@
 package October.day5;
-public code
+public class code
 {
 
 //Permutation with Spaces 
@@ -96,5 +96,43 @@ public code
         return dp[n];
     }
    
-    
+
+//217. Contains Duplicate
+//https://leetcode.com/problems/contains-duplicate/
+
+
+    public boolean containsDuplicate(int[] arr) {
+        
+        HashMap<Integer,Integer>map=new HashMap<>();
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+        }
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if( map.get(arr[i])>1)
+            {
+                return true;
+            }
+        }
+        return false;
+        
+//   
+//         HashSet<Integer> set=new HashSet<>();
+//         for(int i=0;i<arr.length;i++)
+//         {
+//             if(set.contains(arr[i]))
+//             {
+//                 return true;
+//             }
+//             else
+//             {
+//                 set.add(arr[i]);
+//             }
+//         }
+//         return false;
+        
+    }
 }
