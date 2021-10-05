@@ -1,4 +1,5 @@
 package October.day5;
+import java.util.*;
 public class code
 {
 
