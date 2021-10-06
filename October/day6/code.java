@@ -49,3 +49,33 @@ class Solution {
        }
     }
 }
+
+
+//442. Find All Duplicates in an Array
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/
+
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums)
+    {
+        ArrayList<Integer> res=new ArrayList<>();
+
+        HashMap<Integer,Integer> map=new HashMap<>();
+        
+        for(int i=0;i<nums.length;i++)
+        {
+            map.put(nums[i],map.getOrDefault(nums[i],0)+1);
+        }
+       
+        for(int i=0;i<nums.length;i++)
+        {
+            if( map.get(nums[i])!=null && map.get(nums[i])>1)
+            {
+                res.add(nums[i]);
+                map.remove(nums[i]);
+            }
+        }
+        
+        return res;
+    }
+}
