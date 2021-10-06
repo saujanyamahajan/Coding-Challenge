@@ -160,3 +160,30 @@ class Solution4 {
         return res;
     }
 }
+
+
+//Josephus Problem | Game of Death in a circle | Execution in Circle
+//https://practice.geeksforgeeks.org/problems/josephus-problem/1#
+
+
+class Solution5
+{
+   public int solve(int n, int k)
+   {
+        if(n==1)
+        {
+            return 0;
+        }
+        else
+        {
+            return(solve(n-1,k)+k)%n;
+        }
+   }
+   public int josephus(int n, int k)
+    {
+        //Your code here
+        
+        return solve(n,k)+1;
+    }
+    
+}
