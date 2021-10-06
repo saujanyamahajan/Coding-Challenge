@@ -32,7 +32,7 @@ class Solution {
 //https://leetcode.com/problems/merge-sorted-array/
 
 
-class Solution {
+class Solution1 {
     public void merge(int[] nums1, int m, int[] nums2, int n)
     {
         int i=m-1;
@@ -55,7 +55,7 @@ class Solution {
 //https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
 
-class Solution {
+class Solution2 {
     public List<Integer> findDuplicates(int[] nums)
     {
         ArrayList<Integer> res=new ArrayList<>();
@@ -85,7 +85,7 @@ class Solution {
 //https://practice.geeksforgeeks.org/problems/generate-all-possible-parentheses/1#
 
 
-class Solution {
+class Solution3 {
     
     public void solve(int open,int close,String op,List<String>res) 
     {
@@ -117,6 +117,46 @@ class Solution {
         String op="";
         
         solve(open,close,op,res);
+        return res;
+    }
+}
+
+
+//Print N-bit binary numbers having more 1s than 0s 
+//https://practice.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1#
+
+
+class Solution4 {
+    void solve(int ones,int zeros,int n,String op,ArrayList<String> res)
+    {
+        if(ones+zeros==n)
+        {
+            res.add(op);
+            return;
+        }
+        if(ones!=n)
+        {
+            String op1=op;
+            op1=op1+"1";
+            solve(ones+1,zeros,n,op1,res);
+        }
+        if(ones>zeros)
+        {
+            String op2=op;
+            op2=op2+"0";
+            solve(ones,zeros+1,n,op2,res);
+        }
+        return;
+    }
+    
+    ArrayList<String> NBitBinary(int n)
+    {
+        // code here
+        ArrayList<String> res=new ArrayList<String>() ;
+        int ones=0;
+        int zeros=0;
+        String op="";
+        solve(ones,zeros,n,op,res);
         return res;
     }
 }
