@@ -38,49 +38,6 @@ public class code
     }
 
 
-    //784. Letter Case Permutation
-    //https://leetcode.com/problems/letter-case-permutation/
-
-    List<String> res;
-    public List<String> letterCasePermutation(String s)
-    {
-        res = new ArrayList<>();
-        solve(s,"",0);
-        //Collections.sort(res);
-        return res;
-    }
-    public void solve(String ip,String op,int n)
-    {
-        if(ip.length()==n)
-        {
-            res.add(op);
-            return;
-        }
-        String op1=new String(op);
-        String op2=new String(op);
-        char c=ip.charAt(n);
-        
-        if(Character.isAlphabetic(c))
-        {
-            op1=op1+c;
-            
-//             char ch=Character.toUpperCase(c);
-//             op2=op2+ch;
-            
-            c ^= (1 << 5); // converts lower-case to upper and upper to lower
-            op2=op2+c;
-
-            solve(ip,op1,n+1);
-            solve(ip,op2,n+1);
-        }
-        else
-        {
-            op1=op1+c;
-            solve(ip,op1,n+1);
-        }
-
-        return;
-    }
 
     //70. Climbing Stairs
     //https://leetcode.com/problems/climbing-stairs/
@@ -156,4 +113,55 @@ public class code
         }
         return maxSum;
     }
+
+
+
+        //784. Letter Case Permutation
+    //https://leetcode.com/problems/letter-case-permutation/
+
+    public List<String> letterCasePermutation(String s)
+    {
+        List<String> res = new ArrayList<>();
+        solve(s,"",res);
+        //Collections.sort(res);
+        return res;
+    }
+    public void solve(String ip,String op,List<String>res)
+    {
+        if(ip.length()==0)
+        {
+            res.add(op);
+            return;
+        }
+        String op1=new String(op);
+        String op2=new String(op);
+        char c=ip.charAt(0);
+        
+        if(Character.isAlphabetic(c))
+        {
+            char ch1=Character.toLowerCase(c);
+            op1=op1+ch1;
+            
+            char ch2=Character.toUpperCase(c);
+            op2=op2+ch2;
+            
+            ip= ip.substring(1);
+
+            solve(ip,op1,res);
+            solve(ip,op2,res);
+        }
+        else
+        {
+            op1=op1+c;
+            ip = ip.substring(1);
+            solve(ip,op1,res);
+        }
+
+        return;
+    }
+
+    
+
+
+  
 }
