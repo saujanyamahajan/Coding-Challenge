@@ -168,22 +168,29 @@ class Solution4 {
 
 class Solution5
 {
-   public int solve(int n, int k)
-   {
-        if(n==1)
-        {
-            return 0;
-        }
-        else
-        {
-            return(solve(n-1,k)+k)%n;
-        }
-   }
+//    public int solve(int n, int k)
+//    {
+//         if(n==1)
+//         {
+//             return 0;
+//         }
+//         else
+//         {
+//             return(solve(n-1,k)+k)%n;
+//         }
+//    }
    public int josephus(int n, int k)
     {
         //Your code here
         
-        return solve(n,k)+1;
+       // return solve(n,k)+1;
+
+       int ans=0;
+       for(int i=1;i<=n;i++)
+       {
+           ans=(ans+k)%i;
+       }
+       return ans+1;
     }
     
 }
