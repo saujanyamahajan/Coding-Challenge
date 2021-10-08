@@ -115,3 +115,34 @@ class Solution {
     
         }
     }
+
+
+    //    566. Reshape the Matrix
+    //https://leetcode.com/problems/reshape-the-matrix/
+
+
+    class Solution3{
+        public int[][] matrixReshape(int[][] mat, int r, int c) 
+        {
+            int m = mat.length, n = mat[0].length;
+            if (r * c != m * n)
+            {
+                return mat; 
+            }
+            int[][] reshaped = new int[r][c];
+            int ri = 0, cj = 0;
+            for(int i=0; i<mat.length; ++i)
+            {
+                for(int j=0; j<mat[0].length; ++j)
+                {
+                    reshaped[ri][cj++] = mat[i][j];
+                    if(cj >= reshaped[0].length)
+                    {
+                        cj = 0;
+                        ri++;
+                    }
+                }
+            }
+        return reshaped;
+        }
+    }
