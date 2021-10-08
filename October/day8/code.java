@@ -44,3 +44,48 @@ class Solution {
         return res;
     }
 }
+
+
+//121. Best Time to Buy and Sell Stock
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+
+    class Solution1{
+        public int maxProfit(int[] price)
+        {
+            //BRUTE FORCE 
+    //         int diff=0;
+    //         int maxi=0;
+    //         for(int i=0;i<prices.length;i++)
+    //         {
+    //             for(int j=i+1;j<prices.length;j++)
+    //             {
+    //                 diff=prices[j]-prices[i];
+    //                 maxi=Math.max(maxi,diff);
+    
+    //             }
+    //         }
+    //         return maxi;
+            
+            //OPTIMAL
+            
+            int maxProfit=0;
+            int minPrice=price[0];
+            
+            for(int i=0;i<price.length;i++)
+            {
+                if(minPrice>price[i])
+                {
+                    minPrice=price[i];
+                }
+                if(maxProfit<price[i]-minPrice)
+                {
+                    maxProfit=price[i]-minPrice ;
+                }
+                 maxProfit=Math.max(maxProfit,price[i]-minPrice);
+            }
+            return maxProfit;
+        }
+        
+        
+    }
