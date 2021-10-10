@@ -30,7 +30,7 @@ class Solution {
 //https://leetcode.com/problems/ransom-note/
 
 
-class Solution {
+class Solution2 {
     public boolean canConstruct(String ransomNote, String magazine)
     {
         int[] freq=new int[26];
@@ -42,6 +42,36 @@ class Solution {
         for(char c:ransomNote.toCharArray())
         {
             if(--freq[c-'a']<0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+
+//242. Valid Anagram
+//https://leetcode.com/problems/valid-anagram/
+
+
+class Solution3 {
+    public boolean isAnagram(String s, String t) 
+    {
+        int[] freq=new int[26];
+        
+        for(char c:s.toCharArray())
+        {
+            freq[c-'a']++;
+        }
+        for(char c:t.toCharArray())
+        {
+            freq[c-'a']--;
+        }
+        for(int i:freq)
+        {
+            if(i!=0)
             {
                 return false;
             }
