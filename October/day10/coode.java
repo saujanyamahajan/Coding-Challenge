@@ -79,3 +79,40 @@ class Solution3 {
         return true;
     }
 }
+
+
+
+//Anagram 
+//https://practice.geeksforgeeks.org/problems/anagram-1587115620/1#
+
+
+class Solution4
+{    
+    //Function is to check whether two strings are anagram of each other or not.
+    public static boolean isAnagram(String a,String b)
+    {
+        
+        // Your code here
+        int[] freq=new int[26];
+    
+        for(char c:a.toCharArray())
+        {
+            freq[c-'a']++;
+        }
+        
+        for(char c:b.toCharArray())
+        {
+            freq[c-'a']--;
+        }
+        
+        for(int i:freq)
+        {
+            if(i!=0)
+            {
+                return false;
+            }
+        }
+        return true;
+        
+    }
+}
