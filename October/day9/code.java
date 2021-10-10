@@ -128,7 +128,7 @@ class Solution5 {
                 if (board[i][j] != '.')
                 {
                     String b = "(" + board[i][j] + ")";
-                    if (!occured.add(b + i) || !occured.add(j + b) ||                                           !occured.add(i/3 + b + j/3))
+                    if (!occured.add(b + i) || !occured.add(j + b) ||!occured.add(i/3 + b + j/3))
                         return false;
                 }
             }
