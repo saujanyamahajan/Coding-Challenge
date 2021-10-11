@@ -130,3 +130,32 @@ class Solution4 {
         return head.val==val? head.next:head ;
     }
 }
+
+
+//543. Diameter of Binary Tree
+//https://leetcode.com/problems/diameter-of-binary-tree/
+
+
+class Solution6 {
+    public int diameterOfBinaryTree(TreeNode root) {
+        int[] maxi = new int[1];
+        height(root, maxi);
+        return maxi[0];        
+    }
+    
+    int height(TreeNode node, int[] maxi) {
+        
+        if(node==null)
+        {
+            return 0;
+        }
+        int lh=height(node.left,maxi);
+        int rh=height(node.right,maxi);
+        
+        maxi[0]=Math.max(maxi[0],lh+rh);
+        
+        return Math.max(lh,rh)+1;
+    }
+    
+    
+}
