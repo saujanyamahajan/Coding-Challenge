@@ -14,3 +14,24 @@ public ListNode deleteDuplicates(ListNode head)
     return head.val==head.next.val?head.next:head;
 }
 }
+
+
+//206. Reverse Linked List
+//https://leetcode.com/problems/reverse-linked-list/
+
+
+class Solution2 {
+    public ListNode reverseList(ListNode head) {
+        
+        ListNode dummy=null;
+        
+        while(head!=null)
+        {
+            ListNode node=head.next;
+            head.next=dummy;
+            dummy =head;
+            head=node;
+        }
+        return dummy;
+    }
+}
