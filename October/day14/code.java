@@ -57,7 +57,7 @@ class MyQueue {
 //https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 
-class Solution {
+class Solution1 {
     public List<Integer> preorderTraversal(TreeNode root) {
         
         ArrayList<Integer> ans=new ArrayList<>();
@@ -87,7 +87,7 @@ class Solution {
 //https://leetcode.com/problems/binary-tree-inorder-traversal/
 
 
-class Solution {
+class Solution2 {
     public List<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> ans=new ArrayList<>();
         
@@ -118,5 +118,25 @@ class Solution {
             }
         }
         return ans;
+    }
+}
+
+
+//20. Valid Parentheses
+//https://leetcode.com/problems/valid-parentheses/
+
+class Solution {
+    public boolean isValid(String s)
+    {
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i < s.length(); i++) {
+            char a = s.charAt(i);
+            if(a == '(' || a == '[' || a == '{') stack.push(a);
+            else if(stack.empty()) return false;
+            else if(a == ')' && stack.pop() != '(') return false;
+            else if(a == ']' && stack.pop() != '[') return false;
+            else if(a == '}' && stack.pop() != '{') return false;
+        }
+        return stack.empty();
     }
 }
