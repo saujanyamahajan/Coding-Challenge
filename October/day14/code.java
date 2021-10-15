@@ -125,7 +125,7 @@ class Solution2 {
 //20. Valid Parentheses
 //https://leetcode.com/problems/valid-parentheses/
 
-class Solution {
+class Solution2 {
     public boolean isValid(String s)
     {
         Stack<Character> stack = new Stack<>();
@@ -140,3 +140,8 @@ class Solution {
         return stack.empty();
     }
 }
+
+
+
+
+
