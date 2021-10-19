@@ -112,7 +112,7 @@ class Solution3
 
 
 class Solution4{
-    private static void solve(int i, int j, int m[][], int n, ArrayList<String> ans, String move, int vis[][])
+    public static void solve(int i, int j, int m[][], int n, ArrayList<String> ans, String move, int vis[][])
     {
         if(i==n-1 && j==n-1)
         {
