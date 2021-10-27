@@ -61,3 +61,36 @@ class Solution2{
         
     }
 }
+
+
+//28. Implement strStr()
+//https://leetcode.com/problems/implement-strstr/
+
+
+//first approach
+class Solution3 {
+    public int strStr(String haystack, String needle)
+    {
+        int hlen=haystack.length();
+        int nlen=needle.length();
+        
+        if(nlen==0)
+        {
+            return 0;
+        }
+        if(nlen>hlen)
+        {
+            return -1;
+        }
+        int thresold=hlen-nlen;
+        
+        for(int i=0;i<=thresold;i++)
+        {
+            if(haystack.substring(i,i+nlen).equals(needle))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
